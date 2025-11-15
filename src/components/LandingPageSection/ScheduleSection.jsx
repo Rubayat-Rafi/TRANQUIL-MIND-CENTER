@@ -41,7 +41,7 @@ const ScheduleSection = () => {
               Schedule
             </span>
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6 font-montserrat">
             Plan Your Visit
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary via-accent to-second-primary mx-auto rounded-full mb-8"></div>

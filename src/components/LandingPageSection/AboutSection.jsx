@@ -12,7 +12,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-secondary-background">
+    <section id="#about" className="py-16 lg:py-24 bg-secondary-background">
       <Container>
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-20">
@@ -22,7 +22,7 @@ const AboutSection = () => {
               About Us
             </span>
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-4 font-montserrat">
             Who We Are
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary via-accent to-second-primary mx-auto rounded-full"></div>

@@ -51,7 +51,7 @@ const FAQSection = () => {
             <MessageCircle className="w-4 h-4 text-primary" />
             <span className="text-sm font-semibold text-primary uppercase tracking-wide">FAQ</span>
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6 font-montserrat">
             Frequently Asked Questions
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary via-accent to-second-primary mx-auto rounded-full mb-8"></div>

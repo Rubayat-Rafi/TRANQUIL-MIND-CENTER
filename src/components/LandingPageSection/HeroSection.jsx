@@ -1,10 +1,11 @@
 import React from "react";
 import { Brain, Sparkles, Shield, Heart } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
+
   return (
     <div
-      id="#home"
       className="relative bg-linear-to-br from-second-primary via-primary to-second-primary overflow-hidden border-none"
     >
       {/* Animated background elements */}
@@ -36,37 +37,36 @@ const HeroSection = () => {
 
             {/* Main Heading */}
             <div className="space-y-3">
-                <h1 className="text-3xl lg:text-4xl  font-bold text-secondary-background leading-tight font-montserrat">
-                  {/* Drug-Free{" "}
+              <h1 className="text-4xl lg:text-6xl  font-bold text-secondary-background leading-tight font-montserrat">
+                {/* Drug-Free{" "}
                 <span className="bg-linear-to-r from-accent/90  to-accent bg-clip-text text-transparent">
                   Depression Relief
                 </span>{" "}
                 with NeuroStar<sup className="text-2xl">®</sup> TMS Therapy */}
-                  A New Path to{" "}
-                  <span className="bg-linear-to-r from-accent/90  to-accent bg-clip-text text-transparent">
-                    Mental Wellness
-                  </span>
-                </h1>
-                <p className="lg:text-sm text-xs text-secondary-background/85 max-w-2xl mx-auto lg:mx-0">
-                  At Tranquil Mind Center, we provide safe, effective, and
-                  FDA-approved Transcranial Magnetic Stimulation (TMS) therapy
-                  for depression, anxiety, OCD, PTSD, and other mood disorders.
-                  Our mission is simple: to restore hope, balance, and emotional
-                  wellbeing without the side effects of medication.
-                </p>
+                A New Path to{" "}
+                <span className="bg-linear-to-r from-accent/90  to-accent bg-clip-text text-transparent">
+                  Mental Wellness
+                </span>
+              </h1>
+              <p className="lg:text-base text-sm text-secondary-background/85 max-w-2xl mx-auto lg:mx-0">
+                At Tranquil Mind Center, we provide safe, effective, and
+                FDA-approved Transcranial Magnetic Stimulation (TMS) therapy for
+                depression, anxiety, OCD, PTSD, and other mood disorders. Our
+                mission is simple: to restore hope, balance, and emotional
+                wellbeing without the side effects of medication.
+              </p>
 
-                <p className="lg:text-sm text-xs text-secondary-background/85 max-w-2xl mx-auto lg:mx-0">
-                  If traditional treatments haven’t worked, TMS offers a
-                  non-invasive alternative backed by science. Thousands of
-                  patients worldwide have experienced life-changing improvement
-                  — and you can too.
-                </p>
-       
+              <p className="lg:text-base text-sm text-secondary-background/85 max-w-2xl mx-auto lg:mx-0">
+                If traditional treatments haven’t worked, TMS offers a
+                non-invasive alternative backed by science. Thousands of
+                patients worldwide have experienced life-changing improvement —
+                and you can too.
+              </p>
             </div>
 
             {/* Buttons */}
-            <div className="">
-              <button className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-linear-to-r from-accent to-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50">
+            <Link href="/schedule" className="">
+              <button className="group relative py-2 px-6 lg:px-8 lg:py-3 bg-linear-to-r from-accent to-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50">
                 <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
                   Book a Free Consultation
                   <Sparkles className=" w-4 h-4  lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
@@ -78,10 +78,10 @@ const HeroSection = () => {
               {/* <button className="px-6 py-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-full font-medium text-secondary-background hover:bg-white/20 transition-all hover:scale-105">
                 Learn How TMS Works
               </button> */}
-            </div>
+            </Link>
 
             {/* Features */}
-            <div className="">
+            <div className="mt-4">
               <div className="flex items-center justify-center lg:justify-start gap-2 text-secondary-background/80">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
                 <span className="text-[10px] lg:text-xs font-medium">

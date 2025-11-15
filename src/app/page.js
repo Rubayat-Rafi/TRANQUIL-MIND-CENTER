@@ -9,7 +9,7 @@ import WhatIsTMSSection from "@/components/LandingPageSection/WhatIsTMSSection";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HeroSection />
       <AboutSection />
       <WhatIsTMSSection />
@@ -17,7 +17,7 @@ export default function Home() {
       <TreatmentProcessSection />
       <ScheduleSection />
       <FAQSection />
-      <ContactSection />
-    </div>
+      {/* <ContactSection /> */}
+    </>
   );
 }

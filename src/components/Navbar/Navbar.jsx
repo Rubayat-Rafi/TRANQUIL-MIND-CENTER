@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { title: "HOME", href: "#home" },
+    { title: "HOME", href: "/" },
     { title: "ABOUT US", href: "#about" },
     { title: "WHAT IS TMS?", href: "#tms?" },
     { title: "SERVICES", href: "#services" },
@@ -47,13 +47,16 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <button className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 cursor-pointer">
+            <Link
+              href={"/schedule"}
+              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 cursor-pointer"
+            >
               <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
                 SCHEDULE
                 <CalendarCheck className=" w-4 h-4  lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-second-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button (Hamburger) */}
@@ -124,13 +127,16 @@ const Navbar = () => {
 
           {/* end  */}
           <div className="">
-            <button className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-linear-to-r from-accent to-primary rounded-md font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 w-full">
+            <Link
+              href={"/schedule"}
+              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-linear-to-r from-accent to-primary rounded-md font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 w-full"
+            >
               <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
                 SCHEDULE
                 <CalendarCheck className=" w-4 h-4  lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-linear-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

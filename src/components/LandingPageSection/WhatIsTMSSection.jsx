@@ -1,5 +1,5 @@
 import {
-    Activity,
+  Activity,
   Brain,
   CheckCircle2,
   Clock,
@@ -55,7 +55,7 @@ const WhatIsTMSSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section id="tms" className="py-16 lg:py-24 bg-background">
       <Container>
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-20">
@@ -65,7 +65,7 @@ const WhatIsTMSSection = () => {
               Understanding TMS
             </span>
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6 font-montserrat">
             What is TMS?
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary via-accent to-second-primary mx-auto rounded-full mb-8"></div>

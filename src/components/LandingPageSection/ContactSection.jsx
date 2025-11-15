@@ -6,11 +6,10 @@ import {
   MapPin,
   Send,
   Calendar,
-  Clock,
   MessageSquare,
   CheckCircle,
 } from "lucide-react";
-import Link from "next/link";
+
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -52,18 +51,33 @@ const ContactSection = () => {
       color: "from-accent to-primary",
       href: "mailto:appointments@tranquilmindcenter.com",
     },
-    {
-      icon: MapPin,
-      title: "Address",
-      value: "123 Wellness Avenue, Suite 200",
-      subtext: "City, State 12345",
-      color: "from-second-primary to-accent",
-      href: "https://maps.google.com",
-    },
   ];
 
+  const locations = [
+    {
+      name: "Enara Family Counseling",
+      address: "175 W Lexington Avenue",
+      city: "El Cajon, CA 92020",
+      mapUrl:
+        "https://maps.google.com/?q=175+W+Lexington+Avenue+El+Cajon+CA+92020",
+    },
+    {
+      name: "UrgentCare & Tranquil Mind Center",
+      address: "4508 Imperial Highway",
+      city: "Inglewood, CA 90304",
+      mapUrl:
+        "https://maps.google.com/?q=4508+Imperial+Highway+Inglewood+CA+90304",
+    },
+    {
+      name: "Essenza Wellness Center",
+      address: "8901 Activity Road",
+      city: "San Diego, CA 92126",
+      mapUrl:
+        "https://maps.google.com/?q=8901+Activity+Road+San+Diego+CA+92126",
+    },
+  ];
   return (
-    <section className="py-16 lg:py-24 px-4 lg:px-8 bg-background">
+    <section className="py-16 lg:py-24 px-4 lg:px-8 bg-secondary-background">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-20">
@@ -73,7 +87,7 @@ const ContactSection = () => {
               Contact Us
             </span>
           </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-text mb-6 font-montserrat">
             Get in Touch
           </h2>
           <div className="w-20 h-1 bg-linear-to-r from-primary via-accent to-second-primary mx-auto rounded-full mb-8"></div>
@@ -88,11 +102,12 @@ const ContactSection = () => {
           {/* Left - Contact Information */}
           <div className="space-y-6">
             {/* Contact Methods */}
+            {/* Contact Methods */}
             <div className="space-y-4">
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
                 return (
-                  <Link
+                  <a
                     key={index}
                     href={method.href}
                     target={method.icon === MapPin ? "_blank" : undefined}
@@ -103,29 +118,60 @@ const ContactSection = () => {
                   >
                     <div className="flex items-start gap-4">
                       <div
-                        className={`w-14 h-14 bg-linear-to-br ${method.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}
+                        className={`w-14 h-14 bg-linear-to-br ${method.color} rounded-xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform`}
                       >
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-sm font-semibold text-secondary-text mb-1">
-                          {method.title}
+                          {method?.title}
                         </h3>
                         <p className="text-base lg:text-lg font-bold text-text mb-1 group-hover:text-primary transition-colors">
-                          {method.value}
+                          {method?.value}
                         </p>
                         <p className="text-sm text-secondary-text">
-                          {method.subtext}
+                          {method?.subtext}
                         </p>
                       </div>
                     </div>
-                  </Link>
+                  </a>
                 );
               })}
             </div>
 
+            {/* Locations */}
+            <div className="bg-linear-to-br from-second-primary/5 to-accent/5 rounded-2xl p-6 lg:p-8 border border-second-primary/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-linear-to-br from-second-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-text">Our Locations</h3>
+              </div>
+              <div className="space-y-4">
+                {locations.map((location, index) => (
+                  <a
+                    key={index}
+                    href={location?.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block p-4 bg-secondary-background rounded-xl border border-second-primary/10 hover:border-second-primary/30 hover:shadow-md transition-all group"
+                  >
+                    <h4 className="font-bold text-text text-sm lg:text-base mb-1 group-hover:text-second-primary transition-colors">
+                      {location?.name}
+                    </h4>
+                    <p className="text-xs lg:text-sm text-secondary-text">
+                      {location?.address}
+                    </p>
+                    <p className="text-xs lg:text-sm text-secondary-text">
+                      {location?.city}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+
             {/* Office Hours */}
-            <div className="bg-linear-to-br from-primary/5 to-second-primary/5 rounded-2xl p-6 lg:p-8 border border-primary/20">
+            {/* <div className="bg-linear-to-br from-primary/5 to-second-primary/5 rounded-2xl p-6 lg:p-8 border border-primary/20">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-linear-to-br from-primary to-second-primary rounded-xl flex items-center justify-center shadow-lg">
                   <Clock className="w-6 h-6 text-white" />
@@ -158,10 +204,10 @@ const ContactSection = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Quick Book Button */}
-            <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-primary to-second-primary p-1">
+            {/* <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-primary to-second-primary p-1">
               <div className="bg-background rounded-[14px] p-6 lg:p-8">
                 <h3 className="text-xl lg:text-2xl font-bold text-text mb-3">
                   Book an Appointment
@@ -174,7 +220,7 @@ const ContactSection = () => {
                   Book Online
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right - Contact Form */}
@@ -257,7 +303,7 @@ const ContactSection = () => {
                     id="message"
                     name="message"
                     required
-                    value={formData.message}
+                    value={formData?.message}
                     onChange={handleChange}
                     rows="5"
                     className="w-full px-4 py-3 bg-background border-2 border-primary/10 rounded-xl focus:border-primary focus:outline-none transition-colors text-text resize-none"
@@ -303,21 +349,17 @@ const ContactSection = () => {
         </div>
 
         {/* Bottom Map Section */}
-        <div className="rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
-          {/* Map Placeholder - Replace with actual Google Maps embed */}
-          <div className="relative w-full h-64 lg:h-96 bg-linear-to-br from-primary/10 via-accent/10 to-second-primary/10">
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <MapPin className="w-16 h-16 text-primary/40 mb-4" />
-              <p className="text-lg font-semibold text-secondary-text">
-                Map Location
-              </p>
-              <p className="text-sm text-secondary-text mt-2 px-4 text-center">
-                Replace this placeholder with your Google Maps embed iframe
-              </p>
-            </div>
-          </div>
-          {/* Example: <iframe src="YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> */}
-        </div>
+<div className="rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.1234567890!2d-116.9625!3d32.7942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDQ3JzM5LjEiTiAxMTbCsDU3JzQ1LjAiVw!5e0!3m2!1sen!2sus!4v1234567890"
+    width="100%"
+    height="450"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
 
         {/* Help Cards */}
         <div className="grid lg:grid-cols-3 gap-6 mt-12">
