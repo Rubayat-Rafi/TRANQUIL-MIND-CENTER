@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import Container from "../Container/Container";
+import Link from "next/link";
 
 const WhatIsTMSSection = () => {
   const howItWorksSteps = [
@@ -199,12 +200,18 @@ const WhatIsTMSSection = () => {
                 </p>
               </div>
               <div className="flex flex-col lg:flex-row gap-4 lg:justify-end">
-                <button className="px-8 py-4 bg-linear-to-r from-primary to-second-primary hover:from-second-primary hover:to-primary text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg">
+                <Link
+                  href={"/schedule"}
+                  className="px-8 py-4 bg-linear-to-r from-primary to-second-primary hover:from-second-primary hover:to-primary text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
+                >
                   Schedule Consultation
-                </button>
-                <button className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg">
-                  Download Guide
-                </button>
+                </Link>
+                <Link
+                  href={"tel:8588640192"}
+                  className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
+                >
+                  Call Us Today
+                </Link>
               </div>
             </div>
           </div>
