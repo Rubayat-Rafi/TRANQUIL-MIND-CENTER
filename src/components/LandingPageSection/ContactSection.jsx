@@ -9,7 +9,8 @@ import {
   MessageSquare,
   CheckCircle,
 } from "lucide-react";
-
+import Container from "../Container/Container";
+import Link from "next/link";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -38,18 +39,18 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "(555) 123-4567",
+      value: "(858)864-0192",
       subtext: "Mon-Fri: 8AM-6PM",
       color: "from-primary to-second-primary",
-      href: "tel:5551234567",
+      href: "tel:8588640192",
     },
     {
       icon: Mail,
       title: "Email",
-      value: "appointments@tranquilmindcenter.com",
+      value: "info@tranquilmindcenter.com",
       subtext: "We respond within 24 hours",
       color: "from-accent to-primary",
-      href: "mailto:appointments@tranquilmindcenter.com",
+      href: "mailto:info@tranquilmindcenter.com",
     },
   ];
 
@@ -77,8 +78,8 @@ const ContactSection = () => {
     },
   ];
   return (
-    <section className="py-16 lg:py-24 px-4 lg:px-8 bg-secondary-background">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 lg:py-24 bg-secondary-background">
+      <Container>
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
@@ -98,7 +99,7 @@ const ContactSection = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-24">
           {/* Left - Contact Information */}
           <div className="space-y-6">
             {/* Contact Methods */}
@@ -107,7 +108,7 @@ const ContactSection = () => {
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
                 return (
-                  <a
+                  <Link
                     key={index}
                     href={method.href}
                     target={method.icon === MapPin ? "_blank" : undefined}
@@ -134,7 +135,7 @@ const ContactSection = () => {
                         </p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -349,17 +350,79 @@ const ContactSection = () => {
         </div>
 
         {/* Bottom Map Section */}
-<div className="rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.1234567890!2d-116.9625!3d32.7942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDQ3JzM5LjEiTiAxMTbCsDU3JzQ1LjAiVw!5e0!3m2!1sen!2sus!4v1234567890"
-    width="100%"
-    height="450"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  />
-</div>
+        <div className="space-y-8">
+          {/* Enara Family Counseling Map */}
+          <div className="space-y-4">
+            {/* heading with icon */}
+            <div className="flex items-center gap-2  ">
+              <MapPin className=" w-5 h-5 lg:w-8 lg:h-8 " />
+              <h6 className="font-semibold  lg:text-xl">
+                Enara Family Counseling
+              </h6>
+            </div>
+
+            {/* map */}
+            <div className="rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.9892136691506!2d-116.96588942433655!3d32.79254527365719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d959c87310fce3%3A0x5cc61848c89631d5!2s175%20W%20Lexington%20Ave%2C%20El%20Cajon%2C%20CA%2092020%2C%20USA!5e0!3m2!1sen!2sbd!4v1763235252661!5m2!1sen!2sbd"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+
+          {/* UrgentCare & Tranquil Mind Center Map */}
+          <div className="space-y-4">
+            {/* heading with icon */}
+            <div className="flex items-center gap-2  ">
+              <MapPin className=" w-5 h-5 lg:w-8 lg:h-8 " />
+              <h6 className="font-semibold  lg:text-xl">
+                UrgentCare & Tranquil Mind Center
+              </h6>
+            </div>
+
+            {/* map */}
+            <div className="rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.4082786308745!2d-118.35752122357464!3d33.93062577320308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b68ef80110bf%3A0x8b9011ae6b1bbeb9!2s4508%20Imperial%20Hwy.%2C%20Inglewood%2C%20CA%2090304%2C%20USA!5e0!3m2!1sen!2sbd!4v1763235700292!5m2!1sen!2sbd"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+
+          {/* Essenza Wellness Center Map */}
+          <div className="space-y-4">
+            {/* heading with icon */}
+            <div className="flex items-center gap-2  ">
+              <MapPin className=" w-5 h-5 lg:w-8 lg:h-8 " />
+              <h6 className="font-semibold  lg:text-xl">
+                Essenza Wellness Center
+              </h6>
+            </div>
+
+            {/* map */}
+            <div className="rounded-3xl overflow-hidden border-2 border-primary/10 shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.1112772266165!2d-117.13522781339904!3d32.89522604092816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbf8d11c4b9493%3A0xd9be698cfa14ee8!2s8901%20Activity%20Rd%2C%20San%20Diego%2C%20CA%2092126%2C%20USA!5e0!3m2!1sen!2sbd!4v1763235888713!5m2!1sen!2sbd"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Help Cards */}
         <div className="grid lg:grid-cols-3 gap-6 mt-12">
@@ -397,7 +460,7 @@ const ContactSection = () => {
             </p>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

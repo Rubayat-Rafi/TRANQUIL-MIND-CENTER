@@ -10,10 +10,10 @@ const Navbar = () => {
 
   const navItems = [
     { title: "HOME", href: "/" },
-    { title: "ABOUT US", href: "#about" },
-    { title: "WHAT IS TMS?", href: "#tms?" },
-    { title: "SERVICES", href: "#services" },
-    { title: "TREATMENT PROCESS", href: "#treatment" },
+    { title: "ABOUT US", href: "/about-us" },
+    { title: "WHAT IS TMS?", href: "what-is-tms" },
+    { title: "SERVICES", href: "/services" },
+    { title: "TREATMENT PROCESS", href: "/treatment-process" },
   ];
 
   return (

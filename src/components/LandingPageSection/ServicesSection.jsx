@@ -8,12 +8,12 @@ import {
   UserCheck,
   Zap,
 } from "lucide-react";
-import Image from "next/image";
-import React, { useState } from "react";
+
+import React from "react";
+import Container from "../Container/Container";
+import Link from "next/link";
 
 const ServicesSection = () => {
-  const [selectedMedia, setSelectedMedia] = useState(null);
-
   const services = [
     {
       icon: Brain,
@@ -60,14 +60,9 @@ const ServicesSection = () => {
     },
   ];
 
-
-
-
-
-
   return (
     <section className="py-16 lg:py-24 px-4 lg:px-8 bg-background">
-      <div className="max-w-7xl mx-auto">
+      <Container>
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
@@ -123,8 +118,6 @@ const ServicesSection = () => {
           })}
         </div>
 
-
-
         {/* Bottom CTA */}
         <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-primary to-second-primary p-8 lg:p-12 text-center">
           <div className="relative z-10">
@@ -136,12 +129,12 @@ const ServicesSection = () => {
               towards lasting relief from depression
             </p>
             <div className="flex flex-col lg:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg">
+              <Link href={'/schedule'} className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg">
                 Book Consultation
-              </button>
-              <button className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-semibold rounded-full transition-all hover:scale-105 backdrop-blur-sm">
+              </Link>
+              <Link href="tel:8588640192" className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-semibold rounded-full transition-all hover:scale-105 backdrop-blur-sm">
                 Call Us Today
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -149,7 +142,7 @@ const ServicesSection = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

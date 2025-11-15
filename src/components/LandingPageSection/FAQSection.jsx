@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown, Shield, Clock, DollarSign, Car, TrendingUp, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
+import Container from '../Container/Container';
 
 const FAQSection = () => {
  const [openIndex, setOpenIndex] = useState(0);
@@ -43,8 +45,8 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-16 lg:py-24 px-4 lg:px-8 bg-secondary-background">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 lg:py-24  bg-secondary-background">
+      <Container >
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
@@ -95,14 +97,14 @@ const FAQSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full px-8 py-4 bg-linear-to-r from-primary to-second-primary hover:from-second-primary hover:to-primary text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg">
+                <Link href={'/schedule'} className="w-full px-8 py-4 bg-linear-to-r from-primary to-second-primary hover:from-second-primary hover:to-primary text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg">
                   Schedule a Consultation
-                </button>
+                </Link>
 
                 {/* Contact Info */}
                 <div className="mt-6 pt-6 border-t border-primary/20">
                   <p className="text-sm text-secondary-text mb-2">Or call us directly</p>
-                  <p className="text-xl font-bold text-text">(555) 123-4567</p>
+                  <p className="text-xl font-bold text-text">(858)864-0192</p>
                 </div>
               </div>
             </div>
@@ -184,7 +186,7 @@ const FAQSection = () => {
         </div>
 
         {/* Bottom Help Section */}
-        <div className="mt-16 lg:mt-24 grid lg:grid-cols-3 gap-6">
+        {/*<div className="mt-16 lg:mt-24 grid lg:grid-cols-3 gap-6">
           <div className="bg-linear-to-br from-primary/5 to-primary/10 rounded-2xl p-6 border border-primary/20 hover:shadow-lg transition-all">
             <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
               <MessageCircle className="w-6 h-6 text-white" />
@@ -211,8 +213,9 @@ const FAQSection = () => {
             <p className="text-sm text-secondary-text mb-4">Browse guides and educational materials</p>
             <button className="text-second-primary font-semibold text-sm hover:underline">Explore →</button>
           </div>
-        </div>
-      </div>
+        </div>*/}
+
+      </Container>
     </section>
     );
 };

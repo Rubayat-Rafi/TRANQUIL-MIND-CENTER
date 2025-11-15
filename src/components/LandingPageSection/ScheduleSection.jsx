@@ -7,6 +7,8 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import Link from "next/link";
+import Container from "../Container/Container";
 
 const ScheduleSection = () => {
   const weekDays = [
@@ -32,7 +34,7 @@ const ScheduleSection = () => {
 
   return (
     <section className="py-16 lg:py-24 px-4 lg:px-8 bg-background">
-      <div className="max-w-7xl mx-auto">
+      <Container>
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
@@ -112,10 +114,10 @@ const ScheduleSection = () => {
               <p className="text-sm text-secondary-text mb-4">
                 Need to schedule outside these hours?
               </p>
-              <button className="w-full px-6 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+              <Link href="tel:8588640192"  className="w-full px-6 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4" />
                 Call for Special Arrangements
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -226,21 +228,21 @@ const ScheduleSection = () => {
 
               {/* Right - Buttons */}
               <div className="flex flex-col gap-4">
-                <button className="px-8 py-4 bg-linear-to-r from-primary to-second-primary hover:from-second-primary hover:to-primary text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                <Link href={'/schedule'} className="px-8 py-4 bg-linear-to-r from-primary to-second-primary hover:from-second-primary hover:to-primary text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
                   <Calendar className="w-5 h-5" />
                   Book Appointment
-                </button>
-                <button className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                </Link>
+                <Link href="tel:8588640192"  className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />
                   Call Us Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
         {/* Contact Info Strip */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {/* <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="flex items-center gap-4 p-4 bg-secondary-background rounded-2xl border border-primary/10">
             <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
               <Phone className="w-5 h-5 text-primary" />
@@ -274,8 +276,9 @@ const ScheduleSection = () => {
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+
+      </Container>
     </section>
   );
 };

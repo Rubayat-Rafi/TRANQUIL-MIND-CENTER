@@ -1,6 +1,7 @@
 import { Award, Heart, Shield, Sparkles, Users } from "lucide-react";
 import React from "react";
 import Container from "../Container/Container";
+import Link from "next/link";
 
 const AboutSection = () => {
   const commitments = [
@@ -155,9 +156,11 @@ const AboutSection = () => {
                   Let&apos;s discuss how TMS therapy can help you
                 </p>
               </div>
-              <button className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap">
+              <Link
+              href={'/schedule'}
+              className="px-8 py-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg whitespace-nowrap">
                 Schedule Consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>
