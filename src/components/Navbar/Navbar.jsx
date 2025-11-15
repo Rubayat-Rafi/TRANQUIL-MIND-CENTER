@@ -1,5 +1,6 @@
 "use client";
 
+import { CalendarCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,11 +9,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { title: "Home", href: "#home" },
-    { title: "About", href: "#about" },
-    { title: "Our Services", href: "#OurServices" },
-    { title: "NeuroStar TMS", href: "#NeuroStarTMS" },
-    { title: "Contact", href: "#contact" },
+    { title: "HOME", href: "/" },
+    { title: "ABOUT US", href: "#about" },
+    { title: "WHAT IS TMS?", href: "#tms?" },
+    { title: "SERVICES", href: "#services" },
+    { title: "TREATMENT PROCESS", href: "#treatment" },
   ];
 
   return (
@@ -36,14 +37,26 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8 items-center">
             {navItems.map((item) => (
-              <Link key={item.title} href={item.href} className="">
+              <Link
+                key={item.title}
+                href={item.href}
+                className="hover:text-primary transition-colors duration-200 relative group"
+              >
                 {item.title}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"></span>
               </Link>
             ))}
 
-            <button className="primary_btn hover:bg-second-primary">
-              Book Consultation
-            </button>
+            <Link
+              href={"/schedule"}
+              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 cursor-pointer"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
+                SCHEDULE
+                <CalendarCheck className=" w-4 h-4  lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-second-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button (Hamburger) */}
@@ -105,7 +118,7 @@ const Navbar = () => {
                 key={item.title}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-base font-medium rounded-md hover:bg-background transition"
+                className="block px-3 py-2 text-sm font-medium rounded-md hover:bg-background transition"
               >
                 {item.title}
               </Link>
@@ -114,9 +127,16 @@ const Navbar = () => {
 
           {/* end  */}
           <div className="">
-            <button className="primary_btn hover:bg-second-primary w-full">
-              Contact Us
-            </button>
+            <Link
+              href={"/schedule"}
+              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-linear-to-r from-accent to-primary rounded-md font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 w-full"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
+                SCHEDULE
+                <CalendarCheck className=" w-4 h-4  lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-linear-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </Link>
           </div>
         </div>
       </div>
