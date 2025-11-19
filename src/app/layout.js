@@ -2,6 +2,7 @@ import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -16,7 +17,8 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: "TRANQUIL MIND CENTER",
-  description: "At Tranquil Mind Center, we provide safe, effective, and FDA-approved Transcranial Magnetic Stimulation (TMS) therapy for depression, anxiety, OCD, PTSD, and other mood disorders. Our mission is simple: to restore hope, balance, and emotional wellbeing without the side effects of medication.",
+  description:
+    "At Tranquil Mind Center, we provide safe, effective, and FDA-approved Transcranial Magnetic Stimulation (TMS) therapy for depression, anxiety, OCD, PTSD, and other mood disorders. Our mission is simple: to restore hope, balance, and emotional wellbeing without the side effects of medication.",
 };
 
 export default function RootLayout({ children }) {
@@ -30,6 +32,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <ScrollToTopButton />
       </body>
     </html>
   );
