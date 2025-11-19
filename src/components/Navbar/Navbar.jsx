@@ -3,15 +3,17 @@
 import { CalendarCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { title: "HOME", href: "/" },
     { title: "ABOUT US", href: "/about-us" },
-    { title: "WHAT IS TMS?", href: "what-is-tms" },
+    { title: "WHAT IS TMS?", href: "/what-is-tms" },
     { title: "SERVICES", href: "/services" },
     { title: "TREATMENT PROCESS", href: "/treatment-process" },
   ];
@@ -36,20 +38,30 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8 items-center">
-            {navItems.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="hover:text-primary transition-colors duration-200 relative group"
-              >
-                {item.title}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-200"></span>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className={`transition-colors duration-200 relative group 
+              ${isActive ? "text-primary font-semibold" : "hover:text-primary"}
+            `}
+                >
+                  {item.title}
+                  <span
+                    className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-200
+                ${isActive ? "w-full" : "w-0 group-hover:w-full"}
+              `}
+                  ></span>
+                </Link>
+              );
+            })}
 
             <Link
               href={"/schedule"}
-              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 cursor-pointer"
+              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-primary rounded-full font-medium text-secondary-background overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-second-primary/50 cursor-pointer"
             >
               <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
                 SCHEDULE
@@ -113,16 +125,24 @@ const Navbar = () => {
         <div className="p-4 h-full flex flex-col justify-between">
           {/* start  */}
           <div className="space-y-2 ">
-            {navItems.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-sm font-medium rounded-md hover:bg-background transition"
-              >
-                {item.title}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-3 py-2 text-sm font-medium rounded-md  transition-colors ${
+                    isActive
+                      ? " font-semibold bg-background"
+                      : "hover:bg-background"
+                  }`}
+                >
+                  {item.title}
+                </Link>
+              );
+            })}
           </div>
 
           {/* end  */}
@@ -130,13 +150,13 @@ const Navbar = () => {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-linear-to-r from-accent to-primary rounded-md font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 w-full"
+              className="group relative py-1.5 px-3.5 lg:px-6 lg:py-2 bg-primary  rounded-md font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-second-primary/50 w-full cursor-pointer"
             >
               <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
                 SCHEDULE
                 <CalendarCheck className=" w-4 h-4  lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-linear-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-second-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </button>
           </Link>
         </div>

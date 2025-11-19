@@ -66,7 +66,7 @@ const HeroSection = () => {
 
             {/* Buttons */}
             <Link href="/schedule" className="">
-              <button className="group relative py-2 px-6 lg:px-8 lg:py-3 bg-linear-to-r from-accent to-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50">
+              <button className="group relative py-3 px-6 lg:px-8 lg:py-4 bg-linear-to-r from-accent to-primary rounded-full font-medium text-secondary-background  overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-accent/50 cursor-pointer">
                 <span className="relative z-10 flex items-center justify-center gap-2 text-sm lg:text-base">
                   Book a Free Consultation
                   <Sparkles className=" w-4 h-4  lg:w-5 lg:h-5 group-hover:rotate-12 transition-transform" />
